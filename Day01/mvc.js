@@ -7,6 +7,7 @@
 
 const sampleData = ['A', 'B', 'C']
 
+
 const component = {
     data: sampleData,
 
@@ -21,6 +22,7 @@ const component = {
 
 
     findThis: (e) => {
+        // #DEBUG:-#1-why-Window
         if (!e.target.matches('button')) {
             return console.log('!!!');
         }
@@ -32,6 +34,7 @@ const component = {
     },
 
     findTarget(e) {
+        // #NOTE:-still-ul
         if (!e.target.matches('button')) {
             return console.log('!!!');
         }
@@ -52,7 +55,7 @@ const component = {
                 return console.log('!');
             }
             /**
-             * #NOTE:
+             * #DEBUG:-#3
              * how to check F12
              */
             console.log(e);
@@ -73,6 +76,7 @@ const component = {
 
 
         ul.addEventListener('click', ((e) => {
+            // #NOTE:
             console.log('【Right-Way】');
             if (!e.target.matches('button')) {
                 return console.log('!!');
@@ -85,7 +89,7 @@ const component = {
 
 
         /**
-         * #XXX:
+         * #DEBUG:-#2-#XXX:
          * capture
          */
         ul.addEventListener('click', this.findThis, { capture: true })
